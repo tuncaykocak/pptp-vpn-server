@@ -29,6 +29,7 @@ iptables_config() {
   sudo iptables -t nat -F
   sudo iptables -t nat -X
   sudo iptables -A INPUT -p gre -j ACCEPT
+  sudo iptables -A INPUT -p tcp --dport 44158 -j ACCEPT
   sudo iptables -A INPUT -p tcp --dport 1723 -j ACCEPT 
   sudo iptables -A INPUT -p tcp --dport 47 -j ACCEPT 
   sudo iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
