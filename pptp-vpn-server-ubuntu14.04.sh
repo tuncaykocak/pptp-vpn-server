@@ -3,7 +3,6 @@
 #########
 # os: ubuntu
 
-
 install_pptp() { 
   sudo apt-get update
   sudo apt-get -y install pptpd
@@ -34,7 +33,6 @@ iptables_config() {
   sudo iptables -A INPUT -p tcp --dport 47 -j ACCEPT 
   sudo iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
 }
-
 
 # start shell.
 install_pptp
